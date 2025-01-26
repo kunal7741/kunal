@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapido Clone - Home</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: sans-serif;
+        }
+        
+        body {
+          background-color: #f4f4f4;
+        }
+        
+        /* Header Styles */
+        header {
+          background-color:#007bff; /* Blue header */
+          color: #fff;
+          padding: 1rem 0;
+          text-align: center;
+        }
+        
+        /* Hero Section Styles */
+        .hero {
+          text-align: center;
+          padding: 2rem 0;
+        }
+        
+        .hero h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        .hero p {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+        }
+        
+        .hero-buttons {
+          display: flex;
+          justify-content: center;
+        }
+        
+        .hero-buttons button {
+          background-color:#007bff;
+          color: #fff;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 5px;
+          margin: 0 1rem;
+          cursor: pointer;
+        }
+       
+        
+        .features {
+          text-align: center;
+          padding: 2rem 0;
+        }
+        
+        .feature-cards {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap; /* Allow cards to wrap to multiple rows */
+          margin-top: 2rem;
+        }
+        
+        .card {
+          background-color: #fff;
+          border-radius: 5px;
+          padding: 2rem;
+          text-align: center;
+          width: 300px; /* Adjust card width as needed */
+          margin: 1rem;
+        }
+        
+        .card img {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 1rem;
+        }
+        
+        /* How it Works Section Styles */
+        .how-it-works {
+          padding: 2rem 0;
+        }
+        
+        .how-it-works ol {
+          list-style: decimal;
+          padding-left: 2rem;
+        }
+        
+        /* Testimonials Section Styles */
+        .testimonials {
+          text-align: center;
+          padding: 2rem 0;
+        }
+        
+        .testimonial-slider {
+          /* Add slider styling here if using a library */
+        }
+        
+        .testimonial {
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 1rem;
+          margin: 1rem;
+        }
+        
+        /* Join Us Section Styles */
+        .join-us {
+          text-align: center;
+          padding: 2rem 0;
+          background-color: #f0f0f0; /* Light gray background */
+        }
+        
+        
+        footer {
+          background-color: black;
+          color: #fff;
+          padding: 1rem 0;
+          text-align: center;
+        }
+        body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ol li {
+      margin-bottom: 15px;
+    }
+
+    .testimonial-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .testimonial {
+      flex: 0 0 auto; 
+      margin: 0 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    .testimonial p {
+      margin-bottom: 10px;
+    }
+    .rating {
+      display: flex;
+      justify-content: center;
+      size: 120PX;
+    }
+
+    .star {
+      color: green;
+      font-size: 60px;
+    }
+
+    .star-empty {
+      color: #ccc;}
+       </style>
+</head>
+<body>
+
+    <header>
+        </header>
+
+    <main>
+        <section class="hero">
+            <h1>Your Ride, Your Way</h1>
+            <p>Book auto, bike, auto-rickshaw, and more with just a few taps.</p>
+            <div class="hero-buttons">
+                <button>Book Now</button>
+                <button>Learn More</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Us</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJHijS_j6ASWVd4E1hR8sgA39KOKf7JhgXg&s" alt="Fast and Reliable">
+                    <h3>Fast & Reliable</h3>
+                    <p>Get your ride in minutes.</p>
+                </div>
+                <div class="card">
+                    <img src="data:image/png;base64,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" alt="Safe and Secure">
+                    <h3>Safe & Secure</h3>
+                    <p>Travel with peace of mind.</p>
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbOueu2tDlMIbAfW9TGbHY33uU0TOWWfF8Q&s" alt="Best Prices">
+                    <h3>Affordable Prices</h3>
+                    <p>Enjoy competitive fares.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How it Works</h2>
+            <ol>
+                <p>1.Open the website and enter your destination.</p>
+                <p>2.Choose your preferred ride type (auto, bike, toto).</p>
+                <p>3.Book your ride and track its arrival in real-time.</p>
+                <p>4.Enjoy a comfortable and affordable journey.</p>
+            </ol>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-slider"> 
+                <div class="testimonial">
+                    <p>"Speedy is very relevant "</p>
+                    <span>- Nikhil Yadav</span>
+                </div>
+                <div class="testimonial">
+                    <p>"The app is easy to use and the drivers are friendly."</p>
+                    <span>- Prakash</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-us">
+            <h2>Join the Speedy Family</h2>
+            <p>Become a driver-partner and earn extra income.</p>
+            <button>Join Now</button>
+        </section>
+        
+            <div class="rating">
+                
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span> 
+            </div>
+            <p>4.5/5</p>
+          </section>
+    </main>
+
+    <footer>
+        </footer>
+
+</body>
+</html>
