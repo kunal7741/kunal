@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spin Wheel</title>
+  <style>
+    /* CSS for the spin wheel visualization can be added here */
+  </style>
+</head>
+<body>
+
+  <h1>Spin the Wheel!</h1>
+
+  <div id="wheel">
+    </div>
+
+  <button id="spin-button">Spin</button>
+
+  <script>
+    // JavaScript for the spin wheel logic and animation
+    const spinButton = document.getElementById('spin-button');
+    const wheel = document.getElementById('wheel');
+
+    spinButton.addEventListener('click', () => {
+      // 1. Get a random value from the server (or simulate it here)
+      fetch('/get_spin_result') 
+        .then(response => response.json())
+        .then(data => {
+          const result = data.result; 
+
+          // 2. Animate the wheel spinning (using CSS animations or JavaScript)
+          // ... (Wheel animation logic here) ...
+
+          // 3. Display the result (e.g., in an alert or on the page)
+          alert(`You won: ${result}`); 
+        });
+    });
+
+    // Simulate server-side spin result (for demonstration)
+    function getSpinResult() {
+      const values = [10, 30, 60, 80, 100, 0];
+      const randomIndex = Math.floor(Math.random() * values.length);
+      return { result: values[randomIndex] };
+    }
+
+    // Fetch the spin result from the server (replace with actual server-side logic)
+    function fetch(url) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ json: () => Promise.resolve(getSpinResult()) });
+        }, 1000); // Simulate a 1-second delay
+      });
+    }
+  </script>
+
+</body>
+</html>
