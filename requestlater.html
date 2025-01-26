@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Ride</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap; /* Allow form elements to wrap on smaller screens */
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      width: 100%; /* Match input width for better alignment */
+    }
+
+    input[type="date"],
+    input[type="time"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .image-container {
+      width: 50px; /* Adjust image width as needed */
+      margin-right: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      background-color: #007bff; /* Blue button color */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%; /* Stretch button across full width */
+    }
+
+    button:hover {
+      background-color: #0069d9; 
+    }
+
+    .navbar {
+      background-color: #007bff; /* Match button color */
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .back-arrow {
+      display: flex;
+      align-items: center;
+    }
+
+    .back-arrow i {
+      margin-right: 5px;
+      color: #fff; /* White back arrow icon */
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="back-arrow">
+      <i class="fas fa-arrow-left"></i> <a href="javascript:history.back()">Back</a> 
+    </div>
+  </nav>
+
+  <h1>Schedule Your Ride</h1>
+
+  <form>
+    <div class="image-container">
+
+    </div>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required><br><br>
+
+    <button type="submit">Schedule</button>
+  </form>
+
+</body>
+</html>
