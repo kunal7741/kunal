@@ -1,0 +1,246 @@
+*{
+    margin:0%;
+    padding:0%;
+    font-family: 'poppins', sans-serif;
+}
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+  }
+  
+ 
+  .nav-items {
+    margin-left: 100px;
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .nav-items li {
+    margin-right: 20px; 
+  }
+  
+  .nav-items li:last-child {
+    margin-right: 0; 
+  }
+  
+  .nav-items a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .nav-items a:hover {
+    color:grey;
+  }
+ 
+  .nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; 
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: flex-end; 
+}
+  
+ 
+  .nav-items li {
+    display: inline-block;
+    margin-right: 20px;
+    float:right;
+  }
+  
+  .nav-items a {
+    text-decoration: none;
+    color: white;
+  }
+ 
+.left img{
+    margin-top:-11px;
+}
+
+.left p{
+    margin-inline: 22px;
+    margin-top:21px;
+}
+.right p{
+    margin-inline: 22px;
+    margin-top:21px;
+}
+
+
+
+
+
+.card{
+    background-image: url(https://i.gifer.com/VdgG.gif);
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    height: 1000px;
+    padding-block-end: 10%;
+    color: white;
+}
+
+.main{
+    width:400px;
+    height:400px;
+    margin-left: 24px;
+    background-color: grey;
+}
+.main .icon{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(224,223,223);
+}
+
+
+.main .icon .car{
+    margin-inline:74px ;
+    margin-top: 11px;
+    border: 3px solid black;
+}
+
+.card h1{
+    padding: 33px;
+    font-size: 33px;
+}
+.card .main{
+ justify-content: flex;    
+}
+.card input{
+    width: 300px;
+    height: 30px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 11px;
+    border: black;
+    margin-left: 33px;
+    margin-block: 11px;
+}
+.card .btn{
+    margin-left: 33px;
+    margin-top: 44px;
+    
+}
+.card .btn button{
+    width: 140px;
+    height: 36px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    margin-inline:18px;
+
+}
+.card .btn button:hover{
+    background-color: grey;
+    width:150px;
+    height:38px;
+}
+.head h1{
+    justify-content: center;
+    font-size: 40px;
+    padding-left: 550px;
+    background-color: rgb(206, 227, 226);
+    padding: 20px,20px,20px,20px;
+    color: white;
+
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.toto{
+    padding-left: 150px;
+}
+.bike{
+    
+}
+.cab{
+    padding-right: 150px;
+
+}
+
+
+
+
+.driver {
+    margin-top: 9rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+  }
+  .image-driver{
+    
+    padding-left: 40%;
+    max-width: 80%;
+    width: 80%;
+    height: auto;
+    
+  }
+ 
+  .content {
+    grid-column: 2;
+    font-size: 1.5rem;
+ 
+  }
+  button{
+    margin-top: 10px;
+    width: 220px;
+    height: 36px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    margin-inline:18px;
+    margin-bottom: 20px;
+
+  }
+    button:hover{
+    background-color: grey;
+    width:220px;
+    height:38px;
+}
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 9rem;
+  }
+  .content1{
+    grid-column: 2;
+    font-size: 1rem;
+    margin-top: 9rem;
+    margin-left: 300px;
+  }
+  
+  .image-luggage {
+    width: 600px;
+    height: 500px;
+    padding-right: 100px;
+  }
+  
+  .login, .image-luggage {
+    float: left;
+    width: 50%;
+    
+  }
+  p{
+    font-size: 20px;
+  }
+ 
+
+  .earn-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
