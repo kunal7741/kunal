@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spin Wheel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column; /* Make body a column for better layout */
+      min-height: 100vh;
+      align-items: center; 
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .back-arrow {
+      display: flex;
+      align-items: center;
+    }
+
+    .back-arrow i {
+      margin-right: 5px;
+      color: #fff;
+    }
+
+    #wheel-container {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 50px auto;
+      position: relative;
+    }
+
+    #wheel-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    #pointer {
+      width: 10px;
+      height: 40px;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%); 
+      transform-origin: bottom center;
+    }
+
+    #spin-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 120%); 
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="back-arrow">
+      <i class="fas fa-arrow-left"></i> <a href="javascript:history.back()">Back</a> 
+    </div>
+    <div>Wallet: <span id="wallet">0</span></div> 
+  </nav>
+
+  <div id="wheel-container">
+    <canvas id="wheel-canvas" width="300" height="300"></canvas>
+    <div id="pointer"></div>
+  </div>
+
+  <button id="spin-button">Spin</button>
+
+  <script>
+    const canvas = document.getElementById('wheel-canvas');
+    const ctx = canvas.getContext('2d');
+    const spinButton = document.getElementById('spin-button');
+    const walletDisplay = document.getElementById('wallet'); 
+    let walletAmount = 0; 
+
+    const wheelSegments = [0, 20, 40, 60, 80, 100]; 
+    const segmentCount = wheelSegments.length;
+    const segmentAngle = (Math.PI * 2) / segmentCount;
+
+    // Colors for segments
+    const segmentColors = [
+      'red',
+      'orange',
+      'yellow',
+      'green',
+      'blue',
+      'purple'
+    ];
+
+    // Sound effect (replace with your own audio file)
+    const spinSound = new Audio('spinning-reel-27903 (1).mp3.mp3'); 
+
+    // Draw the wheel
+    function drawWheel() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); 
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, canvas.height / 2); 
+
+      for (let i = 0; i < segmentCount; i++) {
+        ctx.fillStyle = segmentColors[i];
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, canvas.height / 2);
+
+        const startAngle = segmentAngle * i;
+        const endAngle = segmentAngle * (i + 1);
+
+        ctx.arc(
+          canvas.width / 2,
+          canvas.height / 2,
+          canvas.width / 2,
+          startAngle,
+          endAngle
+        );
+
+        ctx.lineTo(canvas.width / 2, canvas.height / 2);
+        ctx.fill();
+
+        // Draw segment text
+        ctx.fillStyle = 'black'; 
+        ctx.font = 'bold 16px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate((startAngle + endAngle) / 2); 
+        ctx.fillText(wheelSegments[i], 0, -canvas.width / 2 + 20); // Adjust offset as needed
+        ctx.restore();
+      }
+
+      // Draw segment lines (optional)
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Spin the wheel (simplified)
+    function spin() {
+      spinSound.currentTime = 0; 
+      spinSound.play(); 
+
+      const randomAngle = Math.random() * Math.PI * 2; 
+      let rotation = 0; 
+      const animationFrameId = requestAnimationFrame(function animate() {
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(rotation);
+        drawWheel(); 
+        ctx.restore();
+
+        rotation += 0.05; 
+        if (rotation < randomAngle + Math.PI * 2) { 
+          requestAnimationFrame(animate);
+        } else { 
+          const winningIndex = Math.floor((rotation % (Math.PI * 2)) / segmentAngle);
+          const result = wheelSegments[winningIndex];
+
+          // Update wallet amount
+          walletAmount += result; 
+          walletDisplay.textContent = walletAmount; 
+
+          alert(`You won: ${result}`); 
+
+          // Reset rotation after spinning
+          rotation = 0; 
+          drawWheel(); 
+        }
+      });
+    }
+
+    spinButton.addEventListener('click', spin);
+
+    // Initial draw
+    drawWheel();
+  </script>
+
+</body>
+</html>
